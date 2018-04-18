@@ -1,8 +1,22 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package es.osoco.monkfish
 
 import spock.lang.Specification
 import spock.lang.Unroll
 
+import java.util.concurrent.ExecutionException
 import java.util.concurrent.atomic.AtomicInteger
 import java.util.function.Function
 import java.util.function.Supplier
@@ -13,6 +27,7 @@ import java.util.function.Supplier
 class ResultSpec extends Specification {
 
     private static final String GOOD_RESULT = 'aResult'
+    private static final String EXCEPTION_MESSAGE = 'an exception'
 
     void 'test result creation'() {
         expect:
@@ -78,18 +93,20 @@ class ResultSpec extends Specification {
     void 'error getting async result'() {
         given:
         FutureResult futureResult = Result.async {
-            throw new RuntimeException('an error')
+            throw new RuntimeException(EXCEPTION_MESSAGE)
         }
 
         when:
         Result result =futureResult.get()
-        List<Error<String>> errors = result.errors.get()
+        List<Error<Exception>> errors = result.errors.get()
+        Error<ExecutionException> firstError = errors.first()
 
         then:
         errors.size() == 1
-        errors*.isFutureError() == [false]
-        errors*.isExecutionError() == [true]
-        errors*.code == ['java.lang.RuntimeException: an error']
+        !firstError.isFutureError()
+        firstError.isExecutionError()
+        firstError.code.cause instanceof RuntimeException
+        firstError.code.cause.message == EXCEPTION_MESSAGE
     }
 
     @Unroll

@@ -13,19 +13,21 @@
  */
 package es.osoco.monkfish;
 
+import java.util.concurrent.ExecutionException;
+
 /**
  * JFL 14/4/18
  */
-public class ExecutionError implements Error<Exception> {
+public class ExecutionError implements Error<ExecutionException> {
 
-    private final Exception exception;
+    private final ExecutionException exception;
 
-    ExecutionError(Exception exception) {
+    ExecutionError(ExecutionException exception) {
         this.exception = exception;
     }
 
     @Override
-    public Exception getCode() {
+    public ExecutionException getCode() {
         return this.exception;
     }
 }

@@ -1,17 +1,28 @@
 
 plugins {
     id 'java-library'
+    id 'groovy'
     id 'com.github.hierynomus.license' version '0.14.0'
 }
 
 version = '0.0.1-SNAPSHOT'
+def compatibilityVersion = 1.8
+sourceCompatibility = compatibilityVersion
+targetCompatibility = compatibilityVersion
 
 dependencies {
-    testImplementation 'org.spockframework:spock-core:1.1-groovy-2.4'
+    compile "org.codehaus.groovy:groovy:2.4.15"
+    testCompile 'org.spockframework:spock-core:1.1-groovy-2.4'
 }
 
 repositories {
     jcenter()
+}
+
+sourceSets {
+    main {
+        java { srcDirs = ['src/main/java'] }
+    }
 }
 
 license {

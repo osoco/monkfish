@@ -16,16 +16,16 @@ package es.osoco.monkfish;
 /**
  * JFL 14/4/18
  */
-public class InterruptedError implements Error<Exception> {
+public class InterruptedError implements Error<InterruptedException> {
 
-    private final Exception exception;
+    private final InterruptedException exception;
 
-    InterruptedError(Exception exception) {
+    InterruptedError(InterruptedException exception) {
         this.exception = exception;
     }
 
     @Override
-    public Exception getCode() {
+    public InterruptedException getCode() {
         return this.exception;
     }
 }
