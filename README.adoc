@@ -1,0 +1,30 @@
+== monkfish
+
+Little library for Java 8+
+
+== Usage examples
+
+
+== Latest Versions
+
+Still in development, SNAPSHOT.
+
+== Build
+
+Using gradle wrapper, only Java dependencies in the project, not using other libraries or jars. You need JDK 1.8+ to build and test the project. Groovy for testing, using Spock.
+
+Test project:
+
+    ./gradlew test
+
+Build project:
+
+    ./gradlew build
+
+== License
+
+Monkfish licensed under the terms of the link:http://www.apache.org/licenses/LICENSE-2.0.html[Apache License, Version 2.0]
+
+== Contact
+
+Email: mailto:jorge.franco@osoco.es[]

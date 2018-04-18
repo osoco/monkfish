@@ -1,0 +1,9 @@
+   =========================================================================
+   ==  NOTICE file corresponding to the section 4 d of                    ==
+   ==  the Apache License, Version 2.0,                                   ==
+   ==  in this case for the grooscript library for Groovy.                ==
+   =========================================================================
+
+   Monkfish library for Java 8+
+
+Copyright 2018 Developers and Contributors

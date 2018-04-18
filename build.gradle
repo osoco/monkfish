@@ -1,0 +1,21 @@
+
+plugins {
+    id 'java-library'
+    id 'com.github.hierynomus.license' version '0.14.0'
+}
+
+version = '0.0.1-SNAPSHOT'
+
+dependencies {
+    testImplementation 'org.spockframework:spock-core:1.1-groovy-2.4'
+}
+
+repositories {
+    jcenter()
+}
+
+license {
+    header = file('LICENSE.txt')
+    include "**/*.groovy"
+    includes(["**/*.java"])
+}
