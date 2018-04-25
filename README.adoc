@@ -1,3 +1,5 @@
+:allow-uri-read:
+
 == monkfish
 
 Little library for Java 8+
@@ -6,14 +8,14 @@ Little library for Java 8+
 
 Sometimes, you need that Optional return the errors causing you get empty result.
 
-So, you can call methods / functions that return the result or the errors you got.
+Then, you can call methods / functions that return the result or the errors you got.
 
     public Result doSomething(...params)
 
 Here are some tests explaining the use of Result:
 
 [source,java]
-.ResultTests.groovy
+.ResultTests.java
 ----
 include::https://raw.githubusercontent.com/osoco/monkfish/master/src/test/java/es/osoco/monkfish/ResultTests.java[]
 ----
