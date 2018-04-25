@@ -124,6 +124,18 @@ public class Result<T> {
         }
     }
 
+    /**
+     * Get the result or NoSuchElementException if is fail
+     * @return T
+     */
+    T get() {
+        if (result == null) {
+            throw new NoSuchElementException("Result not present");
+        } else {
+            return result;
+        }
+    }
+
     private Result(T result) {
         this.result = result;
         this.errors = null;

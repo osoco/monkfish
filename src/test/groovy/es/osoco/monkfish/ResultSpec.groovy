@@ -53,6 +53,7 @@ class ResultSpec extends Specification {
         !result.hasErrors()
         result.value.isPresent()
         !result.errors.isPresent()
+        result.get() == GOOD_RESULT
     }
 
     void 'error result'() {
