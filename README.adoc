@@ -15,7 +15,7 @@ Here are some tests explaining the use of Result:
 [source,java]
 .ResultTests.groovy
 ----
-include::./src/test/java/es/osoco/monkfish/ResultTests.java
+include::https://raw.githubusercontent.com/osoco/monkfish/master/src/test/java/es/osoco/monkfish/ResultTests.java
 ----
 
 == Latest Versions
