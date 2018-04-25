@@ -12,13 +12,7 @@ Then, you can call methods / functions that return the result or the errors you 
 
     public Result doSomething(...params)
 
-Here are some tests explaining the use of Result:
-
-[source,java]
-.ResultTests.java
-----
-include::https://raw.githubusercontent.com/osoco/monkfish/master/src/test/java/es/osoco/monkfish/ResultTests.java[]
-----
+Here are some tests explaining the use of Result: https://github.com/osoco/monkfish/blob/master/src/test/java/es/osoco/monkfish/ResultTests.java[Java] https://github.com/osoco/monkfish/blob/master/src/test/groovy/es/osoco/monkfish/ResultSpec.groovy[Groovy]
 
 == Latest Versions
 
